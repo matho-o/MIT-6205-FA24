@@ -1,0 +1,98 @@
+#! /opt/homebrew/Cellar/icarus-verilog/12.0/bin/vvp
+:ivl_version "12.0 (stable)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/system.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/vhdl_sys.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/vhdl_textio.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/v2005_math.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/va_math.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/v2009.vpi";
+S_0x13881e140 .scope package, "$unit" "$unit" 2 1;
+ .timescale 0 0;
+S_0x138823320 .scope module, "top_level" "top_level" 3 3;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "clk_100mhz";
+    .port_info 1 /INPUT 16 "sw";
+    .port_info 2 /INPUT 4 "btn";
+    .port_info 3 /OUTPUT 16 "led";
+    .port_info 4 /OUTPUT 4 "ss0_an";
+    .port_info 5 /OUTPUT 4 "ss1_an";
+    .port_info 6 /OUTPUT 7 "ss0_c";
+    .port_info 7 /OUTPUT 7 "ss1_c";
+    .port_info 8 /OUTPUT 3 "rgb0";
+    .port_info 9 /OUTPUT 3 "rgb1";
+    .port_info 10 /OUTPUT 3 "hdmi_tx_p";
+    .port_info 11 /OUTPUT 3 "hdmi_tx_n";
+    .port_info 12 /OUTPUT 1 "hdmi_clk_p";
+    .port_info 13 /OUTPUT 1 "hdmi_clk_n";
+P_0x138820c00 .param/l "LOG2_STEPS_PER_SECOND" 1 3 38, +C4<00000000000000000000000000001110>;
+o0x1180083d0 .functor BUFZ 16, C4<zzzzzzzzzzzzzzzz>; HiZ drive
+L_0x137e05e70 .functor BUFZ 16, o0x1180083d0, C4<0000000000000000>, C4<0000000000000000>, C4<0000000000000000>;
+L_0x137e17790 .functor BUFZ 7, v0x137e17130_0, C4<0000000>, C4<0000000>, C4<0000000>;
+L_0x137e17840 .functor BUFZ 7, v0x137e17130_0, C4<0000000>, C4<0000000>, C4<0000000>;
+v0x137e06380_0 .var "blue", 7 0;
+o0x118008040 .functor BUFZ 4, C4<zzzz>; HiZ drive
+v0x137e16410_0 .net "btn", 3 0, o0x118008040;  0 drivers
+o0x118008070 .functor BUFZ 1, C4<z>; HiZ drive
+v0x137e164b0_0 .net "clk_100mhz", 0 0, o0x118008070;  0 drivers
+v0x137e16540_0 .var "green", 7 0;
+v0x137e165d0_0 .var "hdmi_clk_n", 0 0;
+v0x137e166a0_0 .var "hdmi_clk_p", 0 0;
+v0x137e16730_0 .var "hdmi_tx_n", 2 0;
+v0x137e167d0_0 .var "hdmi_tx_p", 2 0;
+v0x137e16880_0 .net "led", 15 0, L_0x137e05e70;  1 drivers
+v0x137e16990_0 .var "pg_b", 7 0;
+v0x137e16a40_0 .var "pg_g", 7 0;
+v0x137e16af0_0 .var "pg_r", 7 0;
+v0x137e16ba0_0 .var "red", 7 0;
+L_0x118040058 .functor BUFT 1, C4<000>, C4<0>, C4<0>, C4<0>;
+v0x137e16c50_0 .net "rgb0", 2 0, L_0x118040058;  1 drivers
+L_0x118040010 .functor BUFT 1, C4<000>, C4<0>, C4<0>, C4<0>;
+v0x137e16d00_0 .net "rgb1", 2 0, L_0x118040010;  1 drivers
+v0x137e16db0_0 .var "ss0_an", 3 0;
+v0x137e16e60_0 .net "ss0_c", 6 0, L_0x137e17790;  1 drivers
+v0x137e16ff0_0 .var "ss1_an", 3 0;
+v0x137e17080_0 .net "ss1_c", 6 0, L_0x137e17840;  1 drivers
+v0x137e17130_0 .var "ss_c", 6 0;
+v0x137e171e0_0 .net "sw", 15 0, o0x1180083d0;  0 drivers
+v0x137e17290_0 .net "sys_rst", 0 0, L_0x137e176b0;  1 drivers
+v0x137e17330_0 .var "tp_b", 7 0;
+v0x137e173e0_0 .var "tp_g", 7 0;
+v0x137e17490_0 .var "tp_r", 7 0;
+E_0x137e06040/0 .event anyedge, v0x137e171e0_0, v0x137e17490_0, v0x137e173e0_0, v0x137e17330_0;
+E_0x137e06040/1 .event anyedge, v0x137e16af0_0, v0x137e16a40_0, v0x137e16990_0;
+E_0x137e06040 .event/or E_0x137e06040/0, E_0x137e06040/1;
+L_0x137e176b0 .part o0x118008040, 0, 1;
+    .scope S_0x138823320;
+T_0 ;
+Ewait_0 .event/or E_0x137e06040, E_0x0;
+    %wait Ewait_0;
+    %load/vec4 v0x137e171e0_0;
+    %parti/s 1, 2, 3;
+    %inv;
+    %flag_set/vec4 8;
+    %jmp/0xz  T_0.0, 8;
+    %load/vec4 v0x137e17490_0;
+    %store/vec4 v0x137e16ba0_0, 0, 8;
+    %load/vec4 v0x137e173e0_0;
+    %store/vec4 v0x137e16540_0, 0, 8;
+    %load/vec4 v0x137e17330_0;
+    %store/vec4 v0x137e06380_0, 0, 8;
+    %jmp T_0.1;
+T_0.0 ;
+    %load/vec4 v0x137e16af0_0;
+    %store/vec4 v0x137e16ba0_0, 0, 8;
+    %load/vec4 v0x137e16a40_0;
+    %store/vec4 v0x137e16540_0, 0, 8;
+    %load/vec4 v0x137e16990_0;
+    %store/vec4 v0x137e06380_0, 0, 8;
+T_0.1 ;
+    %jmp T_0;
+    .thread T_0, $push;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "-";
+    "hdl/top_level.sv";

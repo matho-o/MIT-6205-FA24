@@ -1,0 +1,53 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2024.1 (lin64) Build 5076996 Wed May 22 18:36:09 MDT 2024
+| Date         : Wed Dec 11 11:47:35 2024
+| Host         : eecs-digital-29 running 64-bit Ubuntu 24.04.1 LTS
+| Command      : report_utilization -file obj/post_synth_util.rpt -hierarchical -hierarchical_depth 4
+| Design       : top_level
+| Device       : xc7s50csga324-1
+| Speed File   : -1
+| Design State : Synthesized
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Utilization Design Information
+
+Table of Contents
+-----------------
+1. Utilization by Hierarchy
+
+1. Utilization by Hierarchy
+---------------------------
+
++---------------+------------------------------+------------+------------+---------+------+------+--------+--------+------------+
+|    Instance   |            Module            | Total LUTs | Logic LUTs | LUTRAMs | SRLs |  FFs | RAMB36 | RAMB18 | DSP Blocks |
++---------------+------------------------------+------------+------------+---------+------+------+--------+--------+------------+
+| top_level     |                        (top) |       3384 |       3384 |       0 |    0 | 1813 |      0 |      0 |          3 |
+|   (top_level) |                        (top) |          0 |          0 |       0 |    0 |  429 |      0 |      0 |          0 |
+|   blue_ser    |              tmds_serializer |          0 |          0 |       0 |    0 |    0 |      0 |      0 |          0 |
+|   green_ser   |            tmds_serializer_0 |          0 |          0 |       0 |    0 |    0 |      0 |      0 |          0 |
+|   mhdmicw     |            hdmi_clk_wiz_720p |          0 |          0 |       0 |    0 |    0 |      0 |      0 |          0 |
+|   mvg         |                video_sig_gen |        383 |        383 |       0 |    0 |   22 |      0 |      0 |          0 |
+|   my_pong     |                         pong |        163 |        163 |       0 |    0 |   34 |      0 |      0 |          0 |
+|     (my_pong) |                         pong |        149 |        149 |       0 |    0 |   34 |      0 |      0 |          0 |
+|     paddle    |                 block_sprite |          3 |          3 |       0 |    0 |    0 |      0 |      0 |          0 |
+|     puck      | block_sprite__parameterized0 |         11 |         11 |       0 |    0 |    0 |      0 |      0 |          0 |
+|   pke         |         point_kinetics_model |        769 |        769 |       0 |    0 |   72 |      0 |      0 |          3 |
+|   precursor1  |       precursor_tracker_grp1 |        275 |        275 |       0 |    0 |  182 |      0 |      0 |          0 |
+|   precursor2  |       precursor_tracker_grp2 |        301 |        301 |       0 |    0 |  185 |      0 |      0 |          0 |
+|   precursor3  |       precursor_tracker_grp3 |        229 |        229 |       0 |    0 |  185 |      0 |      0 |          0 |
+|   precursor4  |       precursor_tracker_grp4 |        328 |        328 |       0 |    0 |  189 |      0 |      0 |          0 |
+|   precursor5  |       precursor_tracker_grp5 |        449 |        449 |       0 |    0 |  186 |      0 |      0 |          0 |
+|   precursor6  |       precursor_tracker_grp6 |        442 |        442 |       0 |    0 |  183 |      0 |      0 |          0 |
+|   red_ser     |            tmds_serializer_1 |          1 |          1 |       0 |    0 |    1 |      0 |      0 |          0 |
+|   rod1        |                  control_rod |         41 |         41 |       0 |    0 |   16 |      0 |      0 |          0 |
+|   rod2        |                control_rod_2 |         41 |         41 |       0 |    0 |   16 |      0 |      0 |          0 |
+|   rod3        |                control_rod_3 |         41 |         41 |       0 |    0 |   16 |      0 |      0 |          0 |
+|   ssc         |     seven_segment_controller |         56 |         56 |       0 |    0 |   25 |      0 |      0 |          0 |
+|   time_ctrl   |             sim_time_control |         19 |         19 |       0 |    0 |   30 |      0 |      0 |          0 |
+|   tmds_blue   |                 tmds_encoder |          1 |          1 |       0 |    0 |   14 |      0 |      0 |          0 |
+|   tmds_green  |               tmds_encoder_4 |          2 |          2 |       0 |    0 |   14 |      0 |      0 |          0 |
+|   tmds_red    |               tmds_encoder_5 |          2 |          2 |       0 |    0 |   14 |      0 |      0 |          0 |
++---------------+------------------------------+------------+------------+---------+------+------+--------+--------+------------+
+
+
